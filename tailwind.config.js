@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // <--- THIS IS THE MAGIC LINE
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,28 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        oxford: "#0F172A",
-        gold: "#C5A059",
-        slate: {
-          light: "#F8FAFC",
-          gray: "#64748B",
-          dark: "#020617", // New super dark color for background
-          card: "#1E293B"  // New dark color for cards
-        },
+        glass: "rgba(255, 255, 255, 0.05)",
+        glassBorder: "rgba(255, 255, 255, 0.1)",
+        neon: "#3b82f6",
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'fade-up': 'fadeUp 0.8s ease-out forwards',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        }
+      boxShadow: {
+        'neon': '0 0 20px rgba(59, 130, 246, 0.5)',
       }
     },
   },
